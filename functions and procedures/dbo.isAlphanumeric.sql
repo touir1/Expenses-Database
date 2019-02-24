@@ -1,0 +1,9 @@
+USE EXPENSE
+GO
+CREATE OR ALTER FUNCTION isAlphanumeric(@str varchar(8000))
+RETURNS int
+AS
+BEGIN
+	return CASE WHEN @str NOT LIKE '%[^0-9A-Za-z]%' THEN 0 ELSE 1 END
+END;
+GO
